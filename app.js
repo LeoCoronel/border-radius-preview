@@ -4,7 +4,7 @@ let input1 = document.getElementById("top-left").addEventListener("input", updat
 let input2 = document.getElementById("top-right").addEventListener("input", updateRadius);
 let input3 = document.getElementById("bottom-left").addEventListener("input", updateRadius);
 let input4 = document.getElementById("bottom-right").addEventListener("input", updateRadius);
-// const btnCopy = document.getElementById("btnCopy").addEventListener("click", copyClipboard);
+const copyBtn = document.getElementById("copyBtn");
 
 // Se realiza el update del radius de la caja
 function updateRadius() {
@@ -13,10 +13,19 @@ function updateRadius() {
   let borderBottomLeft = document.getElementById("bottom-left").value;
   let borderBottomRight = document.getElementById("bottom-right").value;
   
-  console.log(borderTopLeft, borderTopRight, borderBottomLeft, borderBottomRight)
+  // console.log(borderTopLeft, borderTopRight, borderBottomLeft, borderBottomRight)
 
   let border = box.style.borderRadius = `${borderTopLeft}px ${borderTopRight}px ${borderBottomRight}px ${borderBottomLeft}px`;
-  
+
+  // Agregamos los estilos para utilizarlos en el copy to clipboard
+  document.getElementById("radius-input").value = `border-radius: ${border};`;
+
   return border;
 };
 
+copyBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  let text = document.getElementById("radius-input");
+  text.select();
+  document.execCommand('copy');
+})

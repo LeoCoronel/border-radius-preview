@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/458c9961d9.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Border Radius</title>
@@ -37,7 +38,10 @@
                         <input type="text" name="bottom-right" id="bottom-right" value="0">
                     </div>
 
-                    <button id="btnCopy">Copy to clipboard!</button>
+                    <div class="copy-clipboard">
+                        <textarea name="textarea" id="radius-input" rows="1" cols="20"></textarea>
+                        <button id="copyBtn" href="_blank"><i class="far fa-copy"></i></button>
+                    </div>
                 </form>
             </div>
 

@@ -47,11 +47,16 @@ input[type=text] {
     display:block;
 }  
 
-#btnCopy{
-    height: 50px;
-    background-color: #3e3e3e67;
-    color: white;
+.copy-clipboard {
+    display: flex;
+}
+
+.copy-clipboard button {
+    height: 100%;
+    width: 35px;
     border: none;
+    background-color: #3e3e3e59;
+    color: rgb(204, 198, 198);
 }
 
 #box {
